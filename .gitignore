@@ -1,0 +1,12 @@
+# cmkr
+build*/
+cmake-build*/
+CMakerLists.txt
+CMakeLists.txt.user
+.vs
+out
+.vscode
+.idea
+.aider*
+.env
+.cache

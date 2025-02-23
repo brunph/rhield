@@ -1,0 +1,27 @@
+# Reference: https://build-cpp.github.io/cmkr/cmake-toml
+[project]
+name = "rhield"
+msvc-runtime = "static"
+
+[fetch-content]
+spdlog = { git = "https://github.com/gabime/spdlog", tag = "v1.13.0" }
+zasm = { git = "https://github.com/zyantific/zasm.git" }
+
+[subdir.vendor]
+
+[target.rhield]
+type = "executable"
+sources = ["src/**.cpp", "src/**.hpp"]
+include-directories = ["src"]
+compile-features = ["cxx_std_23"]
+link-libraries = ["spdlog", "zasm", "pepp"]
+precompile-headers = ["src/CommonIncludes.hpp"]
+msvc.link-options = ["/MAP"]
+
+[target.demo]
+type = "executable"
+sources = ["demo/Demo.cpp", "demo/Xorstr.hpp"]
+compile-features = ["cxx_std_20"]
+msvc.compile-options = ["/O3"]
+msvc.link-options = ["/MAP"]
+msvc-runtime = "dynamic"

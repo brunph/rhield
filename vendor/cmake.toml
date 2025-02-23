@@ -1,0 +1,5 @@
+[target.pepp]
+type = "interface"
+include-directories = ["pepp"]
+msvc.compile-options = ["/W0"]
+sources = ["pepp/pepp/**.hpp", "pepp/pepp/**.cpp"]
