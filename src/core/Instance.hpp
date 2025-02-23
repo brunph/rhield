@@ -18,7 +18,7 @@ namespace rhield {
     template<uint32_t bitSize = 64>
     class Instance {
       private:
-        std::unique_ptr<pepp::Image<64>> m_img;  // TODO: change back to using bitsize, only doing it for intellisense rn
+        std::unique_ptr<pepp::Image<bitSize>> m_img;  // TODO: change back to using bitsize, only doing it for intellisense rn
         std::filesystem::path m_path {};
 
         std::unique_ptr<parser::Parser> m_parser {};
